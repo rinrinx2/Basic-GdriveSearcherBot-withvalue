@@ -4,12 +4,27 @@ SUDO_CHATS_ID = [ 993876207, -575492766, -1001319419576, -1001190259319, -100135
 
 
 DRIVE_NAME = [
-    "Root",  # folder 1 name
-    "Cartoon",  # folder 2 name
-    "Course",  # folder 3 name
-    "Movies",  # ....
-    "Series",  # ......
-    "Others"  # and soo onnnn folder n names
+    "1",  # folder 1 name
+    "2",  # folder 2 name
+    "2",  # folder 3 name
+    "4",  # ....
+    "5",  # ......
+    "6"  # and soo onnnn folder n names"1",  # folder 1 name
+
+    "2",  # folder 2 name
+
+    "2",  # folder 3 name
+
+    "4",  # ....
+
+    "5",  # ......
+
+    "6"  # and soo onnnn folder n names"1",  # folder 1 name
+    "2",  # folder 2 name
+    "2",  # folder 3 name
+    "4",  # ....
+    "5",  # ......
+    "6"  # and soo onnnn folder n names
 ]
 
 DRIVE_ID = [
