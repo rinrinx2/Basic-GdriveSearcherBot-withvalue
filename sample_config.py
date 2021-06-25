@@ -96,10 +96,42 @@ DRIVE_ID = [
 ]
 
 INDEX_URL = [
-    "https://dl.null.tech/0:",  # folder 1 index link
-    "https://dl.null.tech/0:/Cartoon",  # folder 2 index link
-    "https://dl.null.tech/0:/Course",  # and soo on folder n link
-    "https://dl.null.tech/0:/MOVIES",
-    "https://dl.null.tech/0:/Series",
-    "https://dl.null.tech/0:/Roms"
+    "http://cdn.bdflix.ml/0:",
+"http://cdn.bdflix.ml/1:",
+"http://cdn.bdflix.ml/2:",
+"http://cdn.bdflix.ml/3:",
+"http://cdn.bdflix.ml/4:",
+"http://cdn.bdflix.ml/5:",
+"http://cdn.bdflix.ml/6:",
+"http://cdn.bdflix.ml/7:",
+"http://cdn.bdflix.ml/8:",
+"http://cdn.bdflix.ml/9:",
+"http://cdn.bdflix.ml/10:"
+"http://cdn.bdflix.ml/11:",
+"http://cdn.bdflix.ml/12:",
+"http://cdn.bdflix.ml/13:",
+"http://cdn.bdflix.ml/14:",
+"http://cdn.bdflix.ml/15:",
+"http://cdn.bdflix.ml/16:",
+"http://cdn.bdflix.ml/17:",
+"http://cdn.bdflix.ml/18:",
+"http://cdn.bdflix.ml/19:",
+"http://cdn.bdflix.ml/20:",
+"http://cdn.bdflix.ml/21:",
+"http://cdn.bdflix.ml/22:",
+"http://cdn.bdflix.ml/23:",
+"http://cdn.bdflix.ml/24:",
+"http://cdn.bdflix.ml/25:",
+"http://cdn.bdflix.ml/26:",
+"http://cdn.bdflix.ml/27:",
+"http://cdn.bdflix.ml/28:",
+"http://cdn.bdflix.ml/29:",
+"http://cdn.bdflix.ml/30:",
+"http://cdn.bdflix.ml/31:",
+"http://cdn.bdflix.ml/32:",
+"http://cdn.bdflix.ml/33:",
+"http://cdn.bdflix.ml/34:",
+"http://cdn.bdflix.ml/35:",
+"http://cdn.bdflix.ml/36:",
+"http://cdn.bdflix.ml/37:",
 ]
