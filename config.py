@@ -91,7 +91,7 @@ INDEX_URL = [
 "http://cdn.bdflix.ml/7:",
 "http://cdn.bdflix.ml/8:",
 "http://cdn.bdflix.ml/9:",
-"http://cdn.bdflix.ml/10:"
+"http://cdn.bdflix.ml/10:",
 "http://cdn.bdflix.ml/11:",
 "http://cdn.bdflix.ml/12:",
 "http://cdn.bdflix.ml/13:",
