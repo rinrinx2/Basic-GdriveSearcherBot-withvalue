@@ -43,18 +43,18 @@ async def search(_, message):
         await m.edit(text="Found Literally Nothing.")
         return
 
-    text = f"**Total Results:** __{results}__\n"
+    text = f"** 🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__\n"
     for count in range(min(i, results)):
         if data[count]['type'] == "file":
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
@@ -100,12 +100,12 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
         except IndexError:
             continue
 
@@ -142,12 +142,12 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
         except IndexError:
             continue
 
