@@ -49,12 +49,14 @@ async def search(_, message):
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**  |🟠|  **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+💚@BangladeshHoarding💚\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**  |🟠|  **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+💚@BangladeshHoarding💚\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
@@ -100,12 +102,14 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**  |🟠|  **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+💚@BangladeshHoarding💚\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+💚@BangladeshHoarding💚\n"""
         except IndexError:
             continue
 
@@ -142,12 +146,14 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**  |🟠|  **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+💚@BangladeshHoarding💚\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚 \n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**  |🟠|  **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+💚@BangladeshHoarding💚 \n"""
         except IndexError:
             continue
 
