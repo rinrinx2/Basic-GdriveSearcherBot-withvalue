@@ -17,7 +17,7 @@ data = None
 
 @app.on_message(filters.command("start") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def start_command(_, message):
-    await message.reply_text("What did you expect to happen? Try /help")
+    await message.reply_text("𝐖𝐡𝐚𝐭 𝐝𝐢𝐝 𝐲𝐨𝐮 𝐞𝐱𝐩𝐞𝐜𝐭 𝐭𝐨 𝐡𝐚𝐩𝐩𝐞𝐧? 𝐓𝐫𝐲 /help")
 
 
 @app.on_message(filters.command("help") & ~filters.edited)
@@ -49,12 +49,12 @@ async def search(_, message):
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
@@ -86,7 +86,7 @@ async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
         await CallbackQuery.answer(
-            "Already at 1st page, Can't go back.",
+            "𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐚𝐭 𝟏𝐬𝐭 𝐩𝐚𝐠𝐞, 𝐂𝐚𝐧'𝐭 𝐠𝐨 𝐛𝐚𝐜𝐤.",
             show_alert=True
         )
         return
@@ -100,12 +100,12 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
         except IndexError:
             continue
 
@@ -142,12 +142,12 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** | **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
         except IndexError:
             continue
 
