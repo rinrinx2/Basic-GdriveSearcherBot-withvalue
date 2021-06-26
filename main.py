@@ -32,7 +32,7 @@ async def search(_, message):
       await message.reply_text('/seach Filename')
       return
     query = message.text.split(' ',maxsplit=1)[1]
-    m = await message.reply_text("**Searching....**")
+    m = await message.reply_text("***🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔍....𝐏𝐥𝐞𝐚𝐬𝐞 🙏 𝐰𝐚𝐢𝐭......**")
     data = drive.drive_list(query)
     
     results = len(data)
@@ -49,22 +49,22 @@ async def search(_, message):
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[Drive Link]({data[count]['drive_url']})** | **[Index Link]({data[count]['url']})**\n"""
+**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[Drive Link]({data[count]['drive_url']})** | **[Index Link]({data[count]['url']})**\n"""
+**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="<<   Previous",
+                        text="<<   ⏮️Previous⏮️",
                         callback_data="previous"
                     ),
                     InlineKeyboardButton(
-                        text="Next   >>",
+                        text="⏭️Next⏭️   >>",
                         callback_data="next"
                     )
                 ]
@@ -100,12 +100,12 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[Drive Link]({data[count]['drive_url']})** | **[Index Link]({data[count]['url']})**\n"""
+**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[Drive Link]({data[count]['drive_url']})** | **[Index Link]({data[count]['url']})**\n"""
+**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
         except IndexError:
             continue
 
@@ -113,11 +113,11 @@ async def previous_callbacc(_, CallbackQuery):
         [
             [
                 InlineKeyboardButton(
-                    text="<<   Previous",
+                    text="<<   ⏮️Previous⏮️",
                     callback_data="previous"
                 ),
                 InlineKeyboardButton(
-                    text="Next   >>",
+                    text="⏭️Next⏭️   >>",
                     callback_data="next"
                 )
             ]
@@ -142,12 +142,12 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[Drive Link]({data[count]['drive_url']})** | **[Index Link]({data[count]['url']})**\n"""
+**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[Drive Link]({data[count]['drive_url']})** | **[Index Link]({data[count]['url']})**\n"""
+**[✅Drive Link]({data[count]['drive_url']})** | **[✅Index Link]({data[count]['url']})**\n"""
         except IndexError:
             continue
 
@@ -155,11 +155,11 @@ async def next_callbacc(_, CallbackQuery):
         [
             [
                 InlineKeyboardButton(
-                    text="<<   Previous",
+                    text="<<   ⏮️Previous⏮️",
                     callback_data="previous"
                 ),
                 InlineKeyboardButton(
-                    text="Next   >>",
+                    text="⏭️Next⏭️   >>",
                     callback_data="next"
                 )
             ]
