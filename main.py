@@ -17,7 +17,7 @@ data = None
 
 @app.on_message(filters.command("start") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def start_command(_, message):
-    await message.reply_text("𝐖𝐡𝐚𝐭 𝐝𝐢𝐝 𝐲𝐨𝐮 𝐞𝐱𝐩𝐞𝐜𝐭 𝐭𝐨 𝐡𝐚𝐩𝐩𝐞𝐧? 𝐓𝐫𝐲 /help")
+    await message.reply_text("𝐖𝐡𝐚𝐭 𝐝𝐢𝐝 𝐲𝐨𝐮 𝐞𝐱𝐩𝐞𝐜𝐭 𝐭𝐨 𝐡𝐚𝐩𝐩𝐞𝐧? 𝐓𝐫𝐲 /help 💚@BangladeshHoarding💚")
 
 
 @app.on_message(filters.command("help") & ~filters.edited)
@@ -32,7 +32,7 @@ async def search(_, message):
       await message.reply_text('/seach Filename')
       return
     query = message.text.split(' ',maxsplit=1)[1]
-    m = await message.reply_text("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔍....𝐏𝐥𝐞𝐚𝐬𝐞 🙏 𝐰𝐚𝐢𝐭......**")
+    m = await message.reply_text("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔍....𝐏𝐥𝐞𝐚𝐬𝐞 🙏 𝐰𝐚𝐢𝐭....💚@BangladeshHoarding💚**")
     data = drive.drive_list(query)
     
     results = len(data)
@@ -40,7 +40,7 @@ async def search(_, message):
     i = i + RESULTS_COUNT
 
     if results == 0:
-        await m.edit(text="Found Literally Nothing.")
+        await m.edit(text="sorry😐 Found Literally Nothing.You have to mirror it...💚@BangladeshHoarding💚")
         return
 
     text = f"** 🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__\n"
@@ -49,12 +49,12 @@ async def search(_, message):
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
@@ -64,7 +64,7 @@ async def search(_, message):
                         callback_data="previous"
                     ),
                     InlineKeyboardButton(
-                        text="Next⏭️ >>",
+                        text="Next ⏭️ >>",
                         callback_data="next"
                     )
                 ]
@@ -100,12 +100,12 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
         except IndexError:
             continue
 
@@ -142,12 +142,12 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** 🟠 **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})** |🟠| **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**💚@BangladeshHoarding💚 \n"""
         except IndexError:
             continue
 
