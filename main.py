@@ -48,8 +48,9 @@ async def search(_, message):
         if data[count]['type'] == "file":
             text += f"""
 📄  [{data[count]['name']}
-**Size:** __{data[count]['size']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**📀 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞:** __{data[count]['size']}__
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n"""
 
         else:
             text += f"""
@@ -101,8 +102,9 @@ async def previous_callbacc(_, CallbackQuery):
             if data[count]['type'] == "file":
                 text += f"""
 📄  [{data[count]['name']}
-**Size:** __{data[count]['size']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**📀 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞:** __{data[count]['size']}__
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n"""
 
             else:
                 text += f"""
@@ -145,8 +147,9 @@ async def next_callbacc(_, CallbackQuery):
             if data[count]['type'] == "file":
                 text += f"""
 📄  [{data[count]['name']}
-**Size:** __{data[count]['size']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**📀 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞:** __{data[count]['size']}__
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n"""
 
             else:
                 text += f"""
