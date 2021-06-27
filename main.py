@@ -32,7 +32,7 @@ async def search(_, message):
       await message.reply_text('/seach Filename')
       return
     query = message.text.split(' ',maxsplit=1)[1]
-    m = await message.reply_text("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔍....𝐏𝐥𝐞𝐚𝐬𝐞 🙏 𝐰𝐚𝐢𝐭....💚@BangladeshHoarding💚**")
+    m = await message.reply_text("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔍..𝐏𝐥𝐞𝐚𝐬𝐞🙏𝐰𝐚𝐢𝐭..💚@BangladeshHoarding💚**")
     data = drive.drive_list(query)
     
     results = len(data)
@@ -43,22 +43,20 @@ async def search(_, message):
         await m.edit(text="sorry😐 Found Literally Nothing.You have to mirror it...💚@BangladeshHoarding💚")
         return
 
-    text = f"** 🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__\n"
+    text = f"**🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__ (Use Index Links)\n"
     for count in range(min(i, results)):
         if data[count]['type'] == "file":
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**   |🟠|   **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-
-𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**   |🟠|   **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
 
-𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+*𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
@@ -104,16 +102,14 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**   |🟠|   **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-
-𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**  |🟠|  **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**  |🟠|  **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
 
-𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+*𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
         except IndexError:
             continue
 
@@ -150,16 +146,14 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**   |🟠|   **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-
-𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📄𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[✅ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤]({data[count]['drive_url']})**   |🟠|   **[✅ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📂𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
 
-𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+*𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
         except IndexError:
             continue
 
