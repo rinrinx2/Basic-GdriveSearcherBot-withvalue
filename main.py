@@ -49,12 +49,12 @@ async def search(_, message):
             text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
 
 *𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
     if len(data) > RESULTS_COUNT:
@@ -102,12 +102,12 @@ async def previous_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**  |🟠|  **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**  |🇧🇩|  **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
 
 *𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
         except IndexError:
@@ -146,12 +146,12 @@ async def next_callbacc(_, CallbackQuery):
                 text += f"""
 📄  [{data[count]['name']}
 **Size:** __{data[count]['size']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📄𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📄𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🟠|   **[✅📂𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
+**[❌ 𝐃𝐫𝐢𝐯𝐞]({data[count]['drive_url']})**   |🇧🇩|   **[✅📂𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
 
 *𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
         except IndexError:
