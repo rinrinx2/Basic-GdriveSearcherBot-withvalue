@@ -29,7 +29,7 @@ async def help_command(_, message):
 async def search(_, message):
     global i, m, data
     if len(message.command) < 2:
-      await message.reply_text('/seach Filename')
+      await message.reply_text('/seach [Filename]')
       return
     query = message.text.split(' ',maxsplit=1)[1]
     m = await message.reply_text("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔎..𝐏𝐥𝐞𝐚𝐬𝐞🙏𝐰𝐚𝐢𝐭..💚@BangladeshHoarding💚**")
@@ -40,7 +40,7 @@ async def search(_, message):
     i = i + RESULTS_COUNT
 
     if results == 0:
-        await m.edit(text="sorry😐 Found Literally Nothing.You have to mirror it...💚@BangladeshHoarding💚")
+        await m.edit(text="Sorry 😐 Found Literally Nothing.Check your Query or You have to mirror it...💚@BangladeshHoarding💚")
         return
 
     text = f"**🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__ (Use Index Links)\n"
