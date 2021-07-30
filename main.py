@@ -17,22 +17,22 @@ data = None
 
 @app.on_message(filters.command("start") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def start_command(_, message):
-    await message.reply_text("𝐖𝐡𝐚𝐭 𝐝𝐢𝐝 𝐲𝐨𝐮 𝐞𝐱𝐩𝐞𝐜𝐭 𝐭𝐨 𝐡𝐚𝐩𝐩𝐞𝐧? 𝐓𝐫𝐲 /help 💚@BangladeshHoarding💚")
+    await message.reply_text("হ্যালো, সার্চ কমান্ড জানতে /help দেখুন।  \n💚@BangladeshHoarding💚")
 
 
 @app.on_message(filters.command("help") & ~filters.edited)
 async def help_command(_, message):
-    await message.reply_text("/search [Query]")
+    await message.reply_text("ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন")
 
 
 @app.on_message(filters.command("search") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def search(_, message):
     global i, m, data
     if len(message.command) < 2:
-      await message.reply_text('/seach [Filename]')
+      await message.reply_text('ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন')
       return
     query = message.text.split(' ',maxsplit=1)[1]
-    m = await message.reply_text("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔎..𝐏𝐥𝐞𝐚𝐬𝐞🙏𝐰𝐚𝐢𝐭..💚@BangladeshHoarding💚**")
+    m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎...অপেক্ষা করুন 🙏... \n🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔎..𝐏𝐥𝐞𝐚𝐬𝐞🙏𝐰𝐚𝐢𝐭..\n💚@BangladeshHoarding💚**")
     data = drive.drive_list(query)
     
     results = len(data)
@@ -40,34 +40,34 @@ async def search(_, message):
     i = i + RESULTS_COUNT
 
     if results == 0:
-        await m.edit(text="Sorry 😐 Found Literally Nothing.Check your Query or You have to mirror it...💚@BangladeshHoarding💚")
+        await m.edit(text="দুঃখিত 😐, কোন ফাইল পাওয়া যায়নি, অথবা আপনি ভূল নামে খুঁজছেন... \n Sorry 😐 Found Literally Nothing.Check your Query or You have to mirror it...\n💚@BangladeshHoarding💚")
         return
 
-    text = f"**🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__ (Use Index Links)\n"
+    text = f"**🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__ \n"
     for count in range(min(i, results)):
         if data[count]['type'] == "file":
             text += f"""
-📄  [{data[count]['name']}
+📄  {data[count]['name']}
 **📀 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞:** __{data[count]['size']}__
-  |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"""
+  |🇧🇩|   **[✅📄 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
+╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣\n"""
 
         else:
             text += f"""
 📂  __{data[count]['name']}__
-  |🇧🇩|   **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-*𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭𝙚𝙙 𝘽𝙮 💚@BangladeshHoarding\n"""
+  |🇧🇩|   **[✅📂 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
+╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣
+*💚@BangladeshHoarding💚\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="<< ⏮️ Previous",
+                        text="<< ⏮️ পূর্ববর্তী",
                         callback_data="previous"
                     ),
                     InlineKeyboardButton(
-                        text="Next ⏭️ >>",
+                        text="পরবর্তী ⏭️ >>",
                         callback_data="next"
                     )
                 ]
@@ -89,7 +89,7 @@ async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
         await CallbackQuery.answer(
-            "𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐚𝐭 𝟏𝐬𝐭 𝐩𝐚𝐠𝐞, 𝐂𝐚𝐧'𝐭 𝐠𝐨 𝐛𝐚𝐜𝐤.",
+            "আপনি প্রথম পেইজে আছেন...",
             show_alert=True
         )
         return
@@ -101,17 +101,17 @@ async def previous_callbacc(_, CallbackQuery):
         try:
             if data[count]['type'] == "file":
                 text += f"""
-📄  [{data[count]['name']}
+📄  {data[count]['name']}
 **📀 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞:** __{data[count]['size']}__
- |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"""
+ |🇧🇩|   **[✅📄 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
+╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
-  |🇧🇩|  **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-*𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭 𝘽𝙮 💚@BangladeshHoarding\n"""
+  |🇧🇩|  **[✅📂 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
+╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣
+*💚@BangladeshHoarding💚\n"""
         except IndexError:
             continue
 
@@ -119,11 +119,11 @@ async def previous_callbacc(_, CallbackQuery):
         [
             [
                 InlineKeyboardButton(
-                    text="<< ⏮️ Previous",
+                    text="<< ⏮️ পূর্ববর্তী",
                     callback_data="previous"
                 ),
                 InlineKeyboardButton(
-                    text="Next ⏭️ >>",
+                    text="পরবর্তী ⏭️ >>",
                     callback_data="next"
                 )
             ]
@@ -146,17 +146,17 @@ async def next_callbacc(_, CallbackQuery):
         try:
             if data[count]['type'] == "file":
                 text += f"""
-📄  [{data[count]['name']}
+📄  {data[count]['name']}
 **📀 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞:** __{data[count]['size']}__
- |🇧🇩|   **[✅📄 𝐃𝐢𝐫𝐞𝐜𝐭 𝐅𝐢𝐥𝐞 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"""
+ |🇧🇩|   **[✅📄 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
+╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣\n"""
 
             else:
                 text += f"""
 📂  __{data[count]['name']}__
- |🇧🇩|   **[✅📂 𝐈𝐧𝐝𝐞𝐱 𝐅𝐨𝐥𝐝𝐞𝐫 𝐋𝐢𝐧𝐤]({data[count]['url']})**
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-*𝙎𝙚𝙖𝙧𝙘𝙝 𝙄𝙣𝙙𝙚𝙭 𝘽𝙮 💚@BangladeshHoarding\n"""
+ |🇧🇩|   **[✅📂 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
+╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣
+*💚@BangladeshHoarding💚\n"""
         except IndexError:
             continue
 
@@ -164,11 +164,11 @@ async def next_callbacc(_, CallbackQuery):
         [
             [
                 InlineKeyboardButton(
-                    text="<< ⏮️ Previous",
+                    text="<< ⏮️ পূর্ববর্তী",
                     callback_data="previous"
                 ),
                 InlineKeyboardButton(
-                    text="Next ⏭️ >>",
+                    text="পরবর্তী ⏭️ >>",
                     callback_data="next"
                 )
             ]
