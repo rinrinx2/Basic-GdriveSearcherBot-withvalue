@@ -9,15 +9,15 @@ DRIVE_NAME = [
     "Bangla_Movies",		# 1
     "Bollywood",  		# 2
     "Hollywood",  		# 3
-    "IMDB_Top_List",  		# 4
-    "Collection_Pack",  	# 5    
-    "South_Indian",  		# 6
+    "IMDB_Top_List",  	# 4
+    "Collection_Pack",  # 5    
+    "South_Indian",  	# 6
     "PSA_Movies",  		# 7
     "PSA_Series",  		# 8
     "TV_Series",  		# 9
     "Courses",  		# 10
     "DC_Zero",  		# 11
-    "Bot_Uploads_2",  		# 12
+    "Bot_Uploads_2",  	# 12
     "APDS_1",  			# 13
     "APDS_2",  			# 14
     "APDS_1.0",  		# 15
@@ -28,19 +28,24 @@ DRIVE_NAME = [
     "APDS_2.3",  		# 20
     "APDS_2.4",  		# 21
     "Xtreme_6",  		# 22   
-    "DEC_20",  			# 26
-    "Jan_21",  			# 27
-    "Jan_21_1",  		# 28
-    "March_21",  		# 29
-    "June_21",  		# 30
-    "May_21",  			# 31
-    "Oct_20",  			# 32
-    "Sep_20",  			# 33
-    "Aug_20",  			# 34
-    "July_20",  		# 35
-    "March_20",  		# 36
-    "Xtreme_1",  		# 37
-    "Xtreme_2",  		# 38  
+    "DEC_20",  			# 23
+    "Jan_21",  			# 24
+    "Jan_21_1",  		# 25
+    "March_21",  		# 26
+    "June_21",  		# 27
+    "May_21",  			# 28
+    "Oct_20",  			# 29
+    "Sep_20",  			# 30
+    "Aug_20",  			# 31
+    "July_20",  		# 32
+    "March_20",  		# 33
+    "Xtreme_1",  		# 34
+    "Xtreme_2",  		# 35  
+    "Xtreme_3",  		# 36
+    "Xtreme_4",  		# 37
+    "Xtreme_5",  		# 38
+    "Shinobi_1",  		# 39
+    "Shinobi_2",  		# 40
 ]
 
 DRIVE_ID = [
@@ -81,6 +86,11 @@ DRIVE_ID = [
 "1iGNP47SiCy-NI9h755EdtAa4hK4aaaJ5",
 "164Zwctr57FGN3YmAPAHH99PueKhp7hL0",
 "1O1kTFP-T2itcxslRxgqOKa4RkZto_2jf",
+"1_wfopFhnP7um9a3234glOqQ6A5kUIdUE",
+"1DqvkdLqBAJZTMFt-isDj09PelD_9nM7W",
+"1grD_3UjRv2OtRPXgGnsVDzlpWQgcBdZx",
+"1mmUK5AHB51u1GXw53i_0U_6VEf62AmHT",
+"1kQU-BlpAQe_lBsKBEQ1u9HSqZU2AN2xw",
 ]
 
 INDEX_URL = [
@@ -124,4 +134,6 @@ INDEX_URL = [
 "http://search.indexbd.cf/36:",
 "http://search.indexbd.cf/:37",
 "http://search.indexbd.cf/:38",
+"http://search.indexbd.cf/:39",
+"http://search.indexbd.cf/:40",
 ]
