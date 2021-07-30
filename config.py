@@ -43,8 +43,7 @@ DRIVE_NAME = [
     "July_20",  		# 35
     "March_20",  		# 36
     "Xtreme_1",  		# 37
-    "Xtreme_2",  		# 38
-    "Xtreme_3",  		# 39    
+    "Xtreme_2",  		# 38  
 ]
 
 DRIVE_ID = [
@@ -88,7 +87,6 @@ DRIVE_ID = [
 "1iGNP47SiCy-NI9h755EdtAa4hK4aaaJ5",
 "164Zwctr57FGN3YmAPAHH99PueKhp7hL0",
 "1O1kTFP-T2itcxslRxgqOKa4RkZto_2jf",
-"1_wfopFhnP7um9a3234glOqQ6A5kUIdUE",
 ]
 
 INDEX_URL = [
@@ -132,5 +130,4 @@ INDEX_URL = [
 "http://search.indexbd.cf/36:",
 "http://search.indexbd.cf/:37",
 "http://search.indexbd.cf/:38",
-"http://search.indexbd.cf/:39",
 ]
