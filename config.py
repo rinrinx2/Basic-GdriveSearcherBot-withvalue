@@ -27,10 +27,7 @@ DRIVE_NAME = [
     "APDS_2.2",  		# 19
     "APDS_2.3",  		# 20
     "APDS_2.4",  		# 21
-    "Xtreme_6",  		# 22
-    "GDMC_1",  			# 23
-    "GDMC_2",  			# 23
-    "GDMC_3",  			# 25
+    "Xtreme_6",  		# 22   
     "DEC_20",  			# 26
     "Jan_21",  			# 27
     "Jan_21_1",  		# 28
@@ -70,9 +67,6 @@ DRIVE_ID = [
 "0ALiNO3Hu006FUk9PVA",
 "0ADgIvgxFERrkUk9PVA",
 "0AO3RmaSwhxQ2Uk9PVA",
-"136ktqB6IW4Rg6SDlgvFDqigfZZ1BUnJV",
-"13BDf37_7tBc680dQ6F6G7_5tP5I81471",
-"1bVo4iuXgQ2h5e2qfQQU2-BRCi0fjSAUc-",
 "1O-xmbS8QFIE0QY1AzMr3HYzPwvW5ZbYx",
 "1SE4US3pprtC7lbA1CZb-LwaFGEjgnay2",
 "18ngROC4tLF2uKGpo0VkE5Elp94MJMIk4",
