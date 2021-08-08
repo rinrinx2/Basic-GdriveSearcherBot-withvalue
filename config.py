@@ -132,8 +132,8 @@ INDEX_URL = [
 "http://search.indexbd.cf/34:",
 "http://search.indexbd.cf/35:",
 "http://search.indexbd.cf/36:",
-"http://search.indexbd.cf/:37",
-"http://search.indexbd.cf/:38",
-"http://search.indexbd.cf/:39",
-"http://search.indexbd.cf/:40",
+"http://search.indexbd.cf/37:",
+"http://search.indexbd.cf/38:",
+"http://search.indexbd.cf/39:",
+"http://search.indexbd.cf/40:",
 ]
