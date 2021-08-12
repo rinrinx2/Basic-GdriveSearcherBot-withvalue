@@ -183,7 +183,7 @@ async def next_callbacc(_, CallbackQuery):
 app.run()
 
 @app.on_message(filters.command("search@bdsearch_bot") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
-async def search(_, message):
+async def search@bdsearch_bot(_, message):
     global i, m, data
     if len(message.command) < 2:
       await message.reply_text('ফাইল খুঁজতে /search@bdsearch_bot [FileName] কমান্ড ব্যবহার করুন')
