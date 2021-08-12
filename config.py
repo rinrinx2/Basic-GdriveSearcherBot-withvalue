@@ -39,12 +39,7 @@ DRIVE_NAME = [
     "slcontens_hindi_10-14",  		# 32
     "slcon_hindi_15-17",  		# 33
     "slcon_hindi_5",  		# 34
-    "Hindi_1080p",  		# 35
-    "",  		# 36
-    "",  		# 37
-    "",  		# 38
-    "",  		# 39
-    "",  		# 40
+    "Hindi_1080p",  		# 35    
 ]
 
 DRIVE_ID = [
@@ -84,15 +79,6 @@ DRIVE_ID = [
 "1GHzj9fsxnW9mYdXZ9dA8oRhY0fb0PAL7",
 "1TbmPQD_ffLcQ24tJ3yuxD4RgP50Se2Rk",
 "1ZcuWM29L6Gb2pLH5cMIY-9mruNPBU2IM",
-"",
-"",
-"",
-"",
-"",
-"",
-"",
-"",
-"",
 ]
 
 INDEX_URL = [
