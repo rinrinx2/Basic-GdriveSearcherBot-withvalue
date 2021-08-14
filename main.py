@@ -57,7 +57,7 @@ async def search(_, message):
 📂  __{data[count]['name']}__
   |🇧🇩|   **[✅📂 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
 ╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣
-*💚@BangladeshHoarding💚\n"""
+@BangladeshHoarding\n"""
     if len(data) > RESULTS_COUNT:
         keyboard = InlineKeyboardMarkup(
             [
@@ -111,7 +111,7 @@ async def previous_callbacc(_, CallbackQuery):
 📂  __{data[count]['name']}__
   |🇧🇩|  **[✅📂 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
 ╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣
-*💚@BangladeshHoarding💚\n"""
+@BangladeshHoarding\n"""
         except IndexError:
             continue
 
@@ -156,7 +156,7 @@ async def next_callbacc(_, CallbackQuery):
 📂  __{data[count]['name']}__
  |🇧🇩|   **[✅📂 ⚡️ইনডেক্স লিংক⚡️]({data[count]['url']})**
 ╠▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╣
-*💚@BangladeshHoarding💚\n"""
+@BangladeshHoarding\n"""
         except IndexError:
             continue
 
