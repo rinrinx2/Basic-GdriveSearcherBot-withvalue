@@ -32,7 +32,7 @@ async def search(_, message):
       await message.reply_text('ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন')
       return
     query = message.text.split(' ',maxsplit=1)[1]
-    m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎...অপেক্ষা করুন 🙏... \n🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 🔎..𝐏𝐥𝐞𝐚𝐬𝐞🙏𝐰𝐚𝐢𝐭..\n💚@BangladeshHoarding💚**")
+    m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎...অপেক্ষা করুন 🙏... \n 💚@BangladeshHoarding💚**")
     data = drive.drive_list(query)
     
     results = len(data)
@@ -40,7 +40,7 @@ async def search(_, message):
     i = i + RESULTS_COUNT
 
     if results == 0:
-        await m.edit(text="দুঃখিত 😐, কোন ফাইল পাওয়া যায়নি, অথবা আপনি ভূল নামে খুঁজছেন... \n Sorry 😐 Found Literally Nothing.Check your Query or You have to mirror it...\n💚@BangladeshHoarding💚")
+        await m.edit(text="দুঃখিত 😐, কোন ফাইল পাওয়া যায়নি, অথবা আপনি ভুল নামে খুঁজছেন...\n 💚@BangladeshHoarding💚")
         return
 
     text = f"**🔎 𝐓𝐨𝐭𝐚𝐥 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:** __{results}__ \n"
