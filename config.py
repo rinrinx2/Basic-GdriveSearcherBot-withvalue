@@ -17,7 +17,7 @@ DRIVE_NAME = [
     "TV_Series",  		# 9
     "Courses",  		# 10
     "DC_Zero",  		# 11
-    "Bot_Uploads_2",  		# 12
+    "Bot_Uploads_2",    # 12
     "APDS_1",  			# 13
     "APDS_2",  			# 14
     "APDS_1.0",  		# 15
@@ -85,7 +85,7 @@ DRIVE_NAME = [
 
 DRIVE_ID = [
 
-"0AJtq-dCXNVYwUk9PVA", 
+"0AJtq-dCXNVYwUk9PVA",
 "1UlKMzEtvWUqmPFIgveo5Uy_jwV1qR9R_",
 "1VJkDLP3bv6InG9R_W9tBC45BxU3CH0fx",
 "1NSCH5JB6Bl4_zhn6yIuwRiiarvhtcHkz",
@@ -204,8 +204,8 @@ INDEX_URL = [
 "http://search.indexbd.cf/36:",
 "http://search.indexbd.cf/37:",
 "http://search.indexbd.cf/38:",
-"http://search.indexbd.cf/39:",
-"http://search.indexbd.cf/40:",
+"https://one.shinobicloud.workers.dev/0:/Bot1",
+"https://two.shinobicloud.workers.dev/0:/Bot2",
 "http://search2.indexbd.cf/1:",
 "http://search2.indexbd.cf/2:",
 "http://search2.indexbd.cf/3:",
