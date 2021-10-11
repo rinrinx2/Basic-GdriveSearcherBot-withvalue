@@ -24,7 +24,23 @@ async def start_command(_, message):
 async def help_command(_, message):
     await message.reply_text("ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন")
 
+@app.on_message(filters.command("search@bdsearch_bot") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+async def search@bdsearch_bot(_, message):
+    global i, m, data
+    if len(message.command) < 2:
+      await message.reply_text('ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন')
+      return
+    query = message.text.split(' ',maxsplit=1)[1]
+    m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎..অপেক্ষা করুন 🙏.. \n 💚@BangladeshHoarding💚**")
+    data = drive.drive_list(query)
+    
+    results = len(data)
+    i = 0
+    i = i + RESULTS_COUNT
 
+    if results == 0:
+        await m.edit(text="দুঃখিত 😐, কোন ফাইল পাওয়া যায়নি, অথবা আপনি ভুল নামে খুঁজছেন... @imdbot বট হতে সঠিক নাম জেনে নিন । \n 💚@BangladeshHoarding💚")
+        return    
 @app.on_message(filters.command("search") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def search(_, message):
     global i, m, data
@@ -32,7 +48,7 @@ async def search(_, message):
       await message.reply_text('ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন')
       return
     query = message.text.split(' ',maxsplit=1)[1]
-    m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎...অপেক্ষা করুন 🙏... \n 💚@BangladeshHoarding💚**")
+    m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎..অপেক্ষা করুন 🙏.. \n 💚@BangladeshHoarding💚**")
     data = drive.drive_list(query)
     
     results = len(data)
