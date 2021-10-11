@@ -24,8 +24,8 @@ async def start_command(_, message):
 async def help_command(_, message):
     await message.reply_text("ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন")
 
-@app.on_message(filters.command("search@bdsearch_bot") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
-async def search@bdsearch_bot(_, message):
+@app.on_message(filters.command("find") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+async def find(_, message):
     global i, m, data
     if len(message.command) < 2:
       await message.reply_text('ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন')
