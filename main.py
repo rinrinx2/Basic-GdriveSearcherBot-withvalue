@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery
 from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotModified
 from config import BOT_TOKEN, RESULTS_COUNT, SUDO_CHATS_ID
 from drive import drive
