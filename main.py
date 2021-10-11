@@ -69,6 +69,12 @@ async def search(_, message):
                     InlineKeyboardButton(
                         text="পরবর্তী ⏭️ >>",
                         callback_data="next"
+                    )                  
+                ]
+                [
+                    InlineKeyboardButton(
+                      text="❌❌", 
+                      callback_data="close"
                     )
                 ]
             ]
@@ -126,6 +132,12 @@ async def previous_callbacc(_, CallbackQuery):
                     text="পরবর্তী ⏭️ >>",
                     callback_data="next"
                 )
+              [
+                InlineKeyboardButton(
+                    text="❌❌", 
+                    callback_data="close"
+                )
+              ]
             ]
         ]
     )
@@ -171,6 +183,12 @@ async def next_callbacc(_, CallbackQuery):
                     text="পরবর্তী ⏭️ >>",
                     callback_data="next"
                 )
+              [
+                InlineKeyboardButton(
+                    text="❌❌", 
+                    callback_data="close"
+                )
+              ]
             ]
         ]
     )
