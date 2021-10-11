@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery, MessageHandler, CallbackQueryHandler
 from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotModified
 from config import BOT_TOKEN, RESULTS_COUNT, SUDO_CHATS_ID
 from drive import drive
@@ -73,8 +73,8 @@ async def search(_, message):
                 ],
                 [
                     InlineKeyboardButton(
-                      text="❌❌", 
-                      callback_data="close"
+                      text="🇧🇩 𝕭𝖆𝖓𝖌𝖑𝖆𝖉𝖊𝖘𝖍 𝕳𝖔𝖆𝖗𝖉𝖎𝖓𝖌 🇧🇩", 
+                    url="https://t.me/Bangladeshhoarding"
                     )
                 ],
             ]
@@ -135,8 +135,8 @@ async def previous_callbacc(_, CallbackQuery):
             ],
             [
                 InlineKeyboardButton(
-                    text="❌❌", 
-                    callback_data="close"
+                    text="🇧🇩 𝕭𝖆𝖓𝖌𝖑𝖆𝖉𝖊𝖘𝖍 𝕳𝖔𝖆𝖗𝖉𝖎𝖓𝖌 🇧🇩", 
+                    url="https://t.me/Bangladeshhoarding"
                 )
             ],
         ]
@@ -186,8 +186,8 @@ async def next_callbacc(_, CallbackQuery):
             ],
             [
                 InlineKeyboardButton(
-                    text="❌❌", 
-                    callback_data="close"
+                    text="🇧🇩 𝕭𝖆𝖓𝖌𝖑𝖆𝖉𝖊𝖘𝖍 𝕳𝖔𝖆𝖗𝖉𝖎𝖓𝖌 🇧🇩", 
+                    url="https://t.me/Bangladeshhoarding"
                 )
             ],
         ]
