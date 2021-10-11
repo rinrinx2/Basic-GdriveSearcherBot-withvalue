@@ -197,9 +197,7 @@ async def next_callbacc(_, CallbackQuery):
     except (MessageEmpty, MessageNotModified):
         pass
 
-
-app.run()
-
+      
 @app.on_message(filters.command("find") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def find(_, message):
     global i, m, data
