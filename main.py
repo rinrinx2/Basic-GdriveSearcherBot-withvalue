@@ -6,8 +6,6 @@ from config import BOT_TOKEN, RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS
 from drive import drive
 from requests import get as g
 
-SUFFIX = os.environ.get("SUFFIX", None)
-
 app = Client(":memory:", bot_token=BOT_TOKEN, api_id=6,
              api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e")
 
@@ -25,10 +23,10 @@ async def start_command(_, message):
 
 @app.on_message(filters.command("help") & ~filters.edited)
 async def help_command(_, message):
-    await message.reply_text("ফাইল খুঁজতে /search [FileName] অথবা /find [FileName] অথবা /S [FileName] কমান্ড ব্যবহার করুন")
+    await message.reply_text("ফাইল খুঁজতে /search [FileName] অথবা /find [FileName] অথবা /s [FileName] অথবা /f [FileName] কমান্ড ব্যবহার করুন")
 
 
-@app.on_message(filters.command("search", SUFFIX) & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+@app.on_message(filters.command("search") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def search(_, message):
     global i, m, data
     if len(message.command) < 2:
