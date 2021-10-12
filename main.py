@@ -7,91 +7,6 @@ from pyrogram.errors import QueryIdInvalid
 from configs import RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS
 from drive import drive
 from requests import get as g
-
-# Bot Client for Inline Search
-Bot = Client(
-    session_name=Config.BOT_SESSION_NAME,
-    api_id=Config.API_ID,
-    api_hash=Config.API_HASH,
-    bot_token=Config.BOT_TOKEN
-)
-# User Client for Searching in Channel.
-User = Client(
-    session_name=Config.USER_SESSION_STRING,
-    api_id=Config.API_ID,
-    api_hash=Config.API_HASH
-)
-
-
-@Bot.on_message(filters.private & filters.command("start"))
-async def start_handler(_, event: Message):
-    await event.reply_text(
-        "হ্যালো, সার্চ কমান্ড জানতে /help দেখুন।  \n💚@BangladeshHoarding💚\n\n"
-        "**Mod By Alex Stuart:**\n",
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Support", url="https://t.me/BDH_PM_bot"),
-             InlineKeyboardButton("Bangladesh Hoarding", url="https://t.me/Bangladeshhoarding")],
-            [InlineKeyboardButton("Mod by Alex Stuart", url="https://t.me/BDH_PM_bot")],
-            [InlineKeyboardButton("Search TG Files Inline", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")]
-        ])
-    )
-
-
-@Bot.on_inline_query()
-async def inline_handlers(_, event: InlineQuery):
-    answers = list()
-    # If Search Query is Empty
-    if event.query == "":
-        answers.append(
-            InlineQueryResultArticle(
-                title="Inline Telegaram Search Bot!",
-                description="You can search telegaram files using this bot.",
-                input_message_content=InputTextMessageContent(
-                    message_text="Using this Bot you can Search telegram files using this bot.\n\n"
-                                 "Made by Alex Stuart",
-                    disable_web_page_preview=True
-                ),
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Search Here", switch_inline_query_current_chat="")],
-                    [InlineKeyboardButton("Support", url="https://t.me/BDH_PM_bot"),
-                     InlineKeyboardButton("Channel", url="https://t.me/Bangladeshhoarding")],
-                    [InlineKeyboardButton("Mod By Alex Stuart", url="https://t.me/BDH_PM_bot")]
-                ])
-            )
-        )
-    # Search Channel Message using Search Query Words
-    else:
-        async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.query):
-            if message.text:
-                answers.append(InlineQueryResultArticle(
-                    title="{}".format(message.text.split("\n", 1)[0]),
-                    description="{}".format(message.text.rsplit("\n", 1)[-1]),
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="")]]),
-                    input_message_content=InputTextMessageContent(
-                        message_text=message.text.markdown,
-                        parse_mode="markdown",
-                        disable_web_page_preview=True
-                    )
-                ))
-    try:
-        await event.answer(
-            results=answers,
-            cache_time=0
-        )
-        print(f"[{Config.BOT_SESSION_NAME}] - Answered Successfully - {event.from_user.first_name}")
-    except QueryIdInvalid:
-        print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")
-
-# Start Clients
-Bot.start()
-User.start()
-# Loop Clients till Disconnects
-idle()
-# After Disconnects,
-# Stop Clients
-Bot.stop()
-User.stop()
-
 app = Client(":memory:", bot_token=Config.BOT_TOKEN, api_id=Config.API_ID,
              api_hash=Config.API_HASH)
 
@@ -968,3 +883,88 @@ async def next_callbacc(_, CallbackQuery):
         pass      
       
 app.run()
+
+# Bot Client for Inline Search
+Bot = Client(
+    session_name=Config.BOT_SESSION_NAME,
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    bot_token=Config.BOT_TOKEN
+)
+# User Client for Searching in Channel.
+User = Client(
+    session_name=Config.USER_SESSION_STRING,
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH
+)
+
+
+@Bot.on_message(filters.private & filters.command("start"))
+async def start_handler(_, event: Message):
+    await event.reply_text(
+        "হ্যালো, সার্চ কমান্ড জানতে /help দেখুন।  \n💚@BangladeshHoarding💚\n\n"
+        "**Mod By Alex Stuart:**\n",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Support", url="https://t.me/BDH_PM_bot"),
+             InlineKeyboardButton("Bangladesh Hoarding", url="https://t.me/Bangladeshhoarding")],
+            [InlineKeyboardButton("Mod by Alex Stuart", url="https://t.me/BDH_PM_bot")],
+            [InlineKeyboardButton("Search TG Files Inline", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")]
+        ])
+    )
+
+
+@Bot.on_inline_query()
+async def inline_handlers(_, event: InlineQuery):
+    answers = list()
+    # If Search Query is Empty
+    if event.query == "":
+        answers.append(
+            InlineQueryResultArticle(
+                title="Inline Telegaram Search Bot!",
+                description="You can search telegaram files using this bot.",
+                input_message_content=InputTextMessageContent(
+                    message_text="Using this Bot you can Search telegram files using this bot.\n\n"
+                                 "Made by Alex Stuart",
+                    disable_web_page_preview=True
+                ),
+                reply_markup=InlineKeyboardMarkup([
+                    [InlineKeyboardButton("Search Here", switch_inline_query_current_chat="")],
+                    [InlineKeyboardButton("Support", url="https://t.me/BDH_PM_bot"),
+                     InlineKeyboardButton("Channel", url="https://t.me/Bangladeshhoarding")],
+                    [InlineKeyboardButton("Mod By Alex Stuart", url="https://t.me/BDH_PM_bot")]
+                ])
+            )
+        )
+    # Search Channel Message using Search Query Words
+    else:
+        async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.query):
+            if message.text:
+                answers.append(InlineQueryResultArticle(
+                    title="{}".format(message.text.split("\n", 1)[0]),
+                    description="{}".format(message.text.rsplit("\n", 1)[-1]),
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="")]]),
+                    input_message_content=InputTextMessageContent(
+                        message_text=message.text.markdown,
+                        parse_mode="markdown",
+                        disable_web_page_preview=True
+                    )
+                ))
+    try:
+        await event.answer(
+            results=answers,
+            cache_time=0
+        )
+        print(f"[{Config.BOT_SESSION_NAME}] - Answered Successfully - {event.from_user.first_name}")
+    except QueryIdInvalid:
+        print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")
+
+# Start Clients
+Bot.start()
+User.start()
+# Loop Clients till Disconnects
+idle()
+# After Disconnects,
+# Stop Clients
+Bot.stop()
+User.stop()
+
