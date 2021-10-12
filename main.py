@@ -1,8 +1,7 @@
 import os
 from configs import Config
 from pyrogram import Client, filters, idle
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, InlineQuery, InlineQueryResultArticle, QueryIdInvalid \
-    InputTextMessageContent
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, InlineQuery, InlineQueryResultArticle, QueryIdInvalid, InputTextMessageContent     
 from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotModified, QueryIdInvalid
 from configs import RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS
 from drive import drive
