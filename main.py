@@ -27,7 +27,7 @@ async def help_command(_, message):
     await message.reply_text("ফাইল খুঁজতে /search [FileName] অথবা /find [FileName] অথবা /S [FileName] কমান্ড ব্যবহার করুন")
 
 
-@app.on_message(filters.command("search") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+@app.on_message(filters.command("search", SUFFIX) & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def search(_, message):
     global i, m, data
     if len(message.command) < 2:
@@ -716,11 +716,11 @@ async def next_callbacc(_, CallbackQuery):
     except (MessageEmpty, MessageNotModified):
         pass
 
-@app.on_message(filters.command("search", SUFFIX) & ~filters.edited & filters.chat(SUDO_CHATS_ID))
-async def search(_, message):
+@app.on_message(filters.command("f") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+async def f(_, message):
     global i, m, data
     if len(message.command) < 2:
-      await message.reply_text('ফাইল খুঁজতে /search [FileName] কমান্ড ব্যবহার করুন')
+      await message.reply_text('ফাইল খুঁজতে /f [FileName] কমান্ড ব্যবহার করুন')
       return
     query = message.text.split(' ',maxsplit=1)[1]
     m = await message.reply_text("**🔎 ফাইলটি খোঁজা হচ্ছে 🔎..অপেক্ষা করুন 🙏.. \n 💚@BangladeshHoarding💚**")
