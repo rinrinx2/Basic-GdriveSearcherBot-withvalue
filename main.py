@@ -960,6 +960,6 @@ User.start()
 idle()
 # After Disconnects,
 # Stop Clients
-Bot.run()
-User.run()
+Bot.stop()
+User.stop()
 
