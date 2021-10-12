@@ -1,13 +1,12 @@
 import os
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotModified
-from config import RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS
+from configs import Config
+from pyrogram import Client, filters, idle
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, InlineQuery, InlineQueryResultArticle, QueryIdInvalid \
+    InputTextMessageContent
+from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotModified, QueryIdInvalid
+from configs import RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS
 from drive import drive
 from requests import get as g
-
-
-
 
 # Bot Client for Inline Search
 Bot = Client(
