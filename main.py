@@ -28,12 +28,12 @@ m = None
 keyboard = None
 data = None
 
-@app.on_message(filters.command("help") & ~filters.edited)
+@Bot.on_message(filters.command("help") & ~filters.edited)
 async def help_command(_, message):
     await message.reply_text("গুগল ড্রাইভ হতে ফাইল খুঁজতে /search [FileName] অথবা /find [FileName] অথবা /s [FileName] অথবা /f [FileName] কমান্ড ব্যবহার করুন, টেলিগ্রাম ফাইল খুঁজতে ইনলাইন সার্চ ব্যাবহার করুন")
 
 
-@app.on_message(filters.command("search") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+@Bot.on_message(filters.command("search") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def search(_, message):
     global i, m, data
     if len(message.command) < 2:
@@ -98,7 +98,7 @@ async def search(_, message):
         pass
 
 
-@app.on_callback_query(filters.regex("previous"))
+@Bot.on_callback_query(filters.regex("previous"))
 async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
@@ -155,7 +155,7 @@ async def previous_callbacc(_, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("next"))
+@Bot.on_callback_query(filters.regex("next"))
 async def next_callbacc(_, CallbackQuery):
     global i, ii, m, data
     ii = i
@@ -206,7 +206,7 @@ async def next_callbacc(_, CallbackQuery):
         pass
 
       
-@app.on_message(filters.command("find") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+@Bot.on_message(filters.command("find") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def find(_, message):
     global i, m, data
     if len(message.command) < 2:
@@ -271,7 +271,7 @@ async def find(_, message):
         pass
 
 
-@app.on_callback_query(filters.regex("previous"))
+@Bot.on_callback_query(filters.regex("previous"))
 async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
@@ -328,7 +328,7 @@ async def previous_callbacc(_, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("next"))
+@Bot.on_callback_query(filters.regex("next"))
 async def next_callbacc(_, CallbackQuery):
     global i, ii, m, data
     ii = i
@@ -378,7 +378,7 @@ async def next_callbacc(_, CallbackQuery):
     except (MessageEmpty, MessageNotModified):
         pass
 
-@app.on_message(filters.command("gs") & ~filters.edited & filters.chat(SUDO_CHATS_ID_GS))
+@Bot.on_message(filters.command("gs") & ~filters.edited & filters.chat(SUDO_CHATS_ID_GS))
 async def gs(_, message):
     global i, m, data
     if len(message.command) < 2:
@@ -443,7 +443,7 @@ async def gs(_, message):
         pass
 
 
-@app.on_callback_query(filters.regex("previous"))
+@Bot.on_callback_query(filters.regex("previous"))
 async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
@@ -500,7 +500,7 @@ async def previous_callbacc(_, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("next"))
+@Bot.on_callback_query(filters.regex("next"))
 async def next_callbacc(_, CallbackQuery):
     global i, ii, m, data
     ii = i
@@ -550,7 +550,7 @@ async def next_callbacc(_, CallbackQuery):
     except (MessageEmpty, MessageNotModified):
         pass
 
-@app.on_message(filters.command("s") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+@Bot.on_message(filters.command("s") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def s(_, message):
     global i, m, data
     if len(message.command) < 2:
@@ -615,7 +615,7 @@ async def s(_, message):
         pass
 
 
-@app.on_callback_query(filters.regex("previous"))
+@Bot.on_callback_query(filters.regex("previous"))
 async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
@@ -672,7 +672,7 @@ async def previous_callbacc(_, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("next"))
+@Bot.on_callback_query(filters.regex("next"))
 async def next_callbacc(_, CallbackQuery):
     global i, ii, m, data
     ii = i
@@ -722,7 +722,7 @@ async def next_callbacc(_, CallbackQuery):
     except (MessageEmpty, MessageNotModified):
         pass
 
-@app.on_message(filters.command("f") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
+@Bot.on_message(filters.command("f") & ~filters.edited & filters.chat(SUDO_CHATS_ID))
 async def f(_, message):
     global i, m, data
     if len(message.command) < 2:
@@ -787,7 +787,7 @@ async def f(_, message):
         pass
 
 
-@app.on_callback_query(filters.regex("previous"))
+@Bot.on_callback_query(filters.regex("previous"))
 async def previous_callbacc(_, CallbackQuery):
     global i, ii, m, data
     if i < RESULTS_COUNT:
@@ -844,7 +844,7 @@ async def previous_callbacc(_, CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("next"))
+@Bot.on_callback_query(filters.regex("next"))
 async def next_callbacc(_, CallbackQuery):
     global i, ii, m, data
     ii = i
