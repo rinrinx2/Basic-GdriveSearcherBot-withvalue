@@ -1,9 +1,11 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotModified
-from config import BOT_TOKEN, RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS, SUFFIX
+from config import BOT_TOKEN, RESULTS_COUNT, SUDO_CHATS_ID, SUDO_CHATS_ID_GS
 from drive import drive
 from requests import get as g
+
+SUFFIX = os.environ.get("SUFFIX", None)
 
 app = Client(":memory:", bot_token=BOT_TOKEN, api_id=6,
              api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e")
