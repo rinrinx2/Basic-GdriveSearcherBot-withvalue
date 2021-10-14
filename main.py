@@ -932,7 +932,7 @@ async def inline_handlers(_, event: InlineQuery):
         )
     # Search Channel Message using Search Query Words
     else:
-        async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.query):
+        async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50):
             if message.text:
                 answers.append(InlineQueryResultArticle(
                     title="{}".format(message.text.split("\n", 1)[0]),
