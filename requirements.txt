@@ -4,3 +4,13 @@ requests
 google-api-python-client>=1.7.11,<1.7.20
 google-auth-httplib2>=0.0.3,<0.1.0
 google-auth-oauthlib>=0.4.1,<0.10.0
+motor==2.4.0
+marshmallow==3.12.2
+requests
+imdbpy
+aiofiles
+aiohttp
+dnspython
+async-lru==1.0.2
+pyaes==1.6.1
+PySocks==1.7.1
